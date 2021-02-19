@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TeleLifeAdmin.shared.Extensions;
 
 namespace TeleLifeAdmin.and
 {
@@ -8,6 +9,7 @@ namespace TeleLifeAdmin.and
         {
             var allCallValues = new Dictionary<string, string>
             {
+                {"  ALL CALLS ",""},
                 { "TotalCallsForToday", "2980"},
                 {"TotalCallsCurrentlyAvailable", "2313" },
                 {"TotalCallDelivered", "273" },
@@ -23,10 +25,22 @@ namespace TeleLifeAdmin.and
         {
             var teleLifeRepValues = new Dictionary<string, string>
             {
+                { "", "" },
+                {"  POM CALLS", "" },
                 {"AvailableReps", "0" },
                 {"CurrentPacingValue", "3" }
             };
             return teleLifeRepValues;            
+        }
+
+        public Dictionary<string,string> RetrieveAllDashboardValues()
+        {
+            Dictionary<string,string> allCallValues = RetrieveAllCallValues();
+            Dictionary<string,string> tlValues = TelelifeRepValue();
+
+            allCallValues.Merge(tlValues, true);
+
+            return allCallValues;
         }
     }
 }

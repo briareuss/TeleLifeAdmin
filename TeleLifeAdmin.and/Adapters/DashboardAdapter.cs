@@ -1,15 +1,11 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.Widget;
+﻿using Android.Support.V7.Widget;
 using Android.Views;
-using Android.Widget;
-using System;
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 using TeleLifeAdmin.and.ViewHolders;
+using TeleLifeAdmin.shared.Extensions;
 
 namespace TeleLifeAdmin.and.Adapters
 {
@@ -21,16 +17,14 @@ namespace TeleLifeAdmin.and.Adapters
         public DashboardAdapter()
         {
             var tempRepo = new TempRepo();
-            _allCalls = tempRepo.RetrieveAllCallValues();
-            
-
+            _allCalls = tempRepo.RetrieveAllDashboardValues();           
                
         }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             if (holder is DashboardViewHolder dashboardViewHolder)
             {
-                dashboardViewHolder.DashboardNameTextView.Text = _allCalls.ElementAt(position).Key;
+                dashboardViewHolder.DashboardNameTextView.Text = _allCalls.ElementAt(position).Key.CamelCaseSpace();
                 dashboardViewHolder.DashboardValueTextView.Text = _allCalls.ElementAt(position).Value;
             }
         }
