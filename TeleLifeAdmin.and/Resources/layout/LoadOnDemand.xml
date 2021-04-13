@@ -7,44 +7,71 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:id="@+id/loadOnDemandLinearLayout">
     <TextView
-        android:text="Traditional Loads"
+        android:text="Non Scheduled Pacing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:height="40dp"
         android:textSize="25dp"
         android:layout_marginBottom="20dp"
-        android:id="@+id/textView1" />
+        android:id="@+id/nonScheduledPacingTextView" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"       
-        
-     <EditText
-        android:id="@+id/TraditionalLoadAmountEditText"
-        android:layout_width="75dp"
-        android:layout_height="40dp"
-        android:hint="Amount"
-        android:inputType="number"
-        android:background="@android:color/white"
-        android:textColor="@android:color/black"
-        
+        android:id="@+id/nonScheduledPacingLinearLayout">
+
+        <EditText
+            android:id="@+id/nonScheduledPacingEditText"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:hint="Amount"
+            android:inputType="number"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
         />
-    <Button
-        android:text="Load"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"        
-        android:height="30dp"
-        android:id="@+id/loadTraditionalContactsButton" />
-        
+        <Button
+            android:text="Load"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:height="30dp"
+            android:id="@+id/nonScheduledPacingButton" />
+    </LinearLayout>
+    <TextView
+        android:text="Load Automated Contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="40dp"
+        android:textSize="25dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/loadAutomatedContactstextView" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1" >
+        <EditText
+            android:id="@+id/loadAutomatedContactsEditText"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:hint="Amount"
+            android:inputType="number"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
         />
+        <Button
+            android:text="Load"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:height="30dp"
+            android:id="@+id/loadAutomatedContactsButton" />
+     </LinearLayout>
 
-
-
-
-  
 </LinearLayout>
