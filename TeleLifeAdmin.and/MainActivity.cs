@@ -13,6 +13,7 @@ namespace TeleLifeAdmin.and
     {
         private Button _dashboardButton;
         private Button _loadOnDemandButton;
+        private Button _emailTlManagerButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,12 +35,14 @@ namespace TeleLifeAdmin.and
         {
             _dashboardButton.Click += DashboardButton_Click;
             _loadOnDemandButton.Click += LoadOnDemandButton_Click;
+            _emailTlManagerButton.Click += EmailTlManagerButton_Click;
         }
 
         private void FindViews()
         {
             _dashboardButton = FindViewById<Button>(Resource.Id.dashboardButton);
             _loadOnDemandButton = FindViewById<Button>(Resource.Id.loadOnDemandButton);
+            _emailTlManagerButton = FindViewById<Button>(Resource.Id.emailTlManagerButton);
         }
         
         private void DashboardButton_Click(object sender, EventArgs args)
@@ -51,6 +54,11 @@ namespace TeleLifeAdmin.and
         private void LoadOnDemandButton_Click(object sender, EventArgs args)
         {
             var loadOnDemandIntent = new Intent(this, typeof(LoadOnDemandActivity));
+            StartActivity(loadOnDemandIntent);
+        }
+        private void EmailTlManagerButton_Click(object sender, EventArgs args)
+        {
+            var loadOnDemandIntent = new Intent(this, typeof(EmailTlManagerActivity));
             StartActivity(loadOnDemandIntent);
         }
     }

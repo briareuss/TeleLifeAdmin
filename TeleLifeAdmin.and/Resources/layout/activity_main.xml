@@ -20,12 +20,12 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/loadOnDemandButton" />
     <Button
-        android:text="Email"
+        android:text="Email TL Manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/emailButton" />
+        android:id="@+id/emailTlManagerButton" />
     <Button
         android:text="Chat"
         android:layout_width="wrap_content"

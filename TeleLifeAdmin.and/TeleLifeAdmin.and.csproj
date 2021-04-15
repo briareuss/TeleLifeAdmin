@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Adapters\DashboardAdapter.cs" />
     <Compile Include="DashboardActivity.cs" />
+    <Compile Include="EmailTlManagerActivity.cs" />
     <Compile Include="LoadOnDemandActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -137,6 +138,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\LoadOnDemand.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EmailTlManager.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
