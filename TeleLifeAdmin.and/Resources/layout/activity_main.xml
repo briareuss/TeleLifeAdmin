@@ -13,12 +13,12 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/dashboardButton" />
     <Button
-        android:text="Load Values"
+        android:text="Load On Demand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/loadValuesButton" />
+        android:id="@+id/loadOnDemandButton" />
     <Button
         android:text="Email"
         android:layout_width="wrap_content"

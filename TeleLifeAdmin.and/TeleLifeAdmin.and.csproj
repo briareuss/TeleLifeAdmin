@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Adapters\DashboardAdapter.cs" />
     <Compile Include="DashboardActivity.cs" />
+    <Compile Include="LoadOnDemandActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
