@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TeleLifeAdmin.api.Data;
+using TeleLifeAdmin.shared.Models;
 
 namespace TeleLifeAdmin.api.DataAccess
 {

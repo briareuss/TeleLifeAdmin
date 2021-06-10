@@ -2,8 +2,7 @@
 {
     public class DashboardData
     {
-        public string DashboardType { get; set; }
-        public string DashboardName { get; set; }
-        public string DashboardValue { get; set; }
+        public string CountType { get; set; }
+        public int Count { get; set; }
     }
 }
