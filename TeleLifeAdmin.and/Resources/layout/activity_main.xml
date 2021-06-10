@@ -27,12 +27,52 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/emailTlManagerButton" />
     <Button
-        android:text="Chat"
+        android:text="Manager Chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/chatButton" />
-
-
+        android:id="@+id/managerChatButton" />
+    <Button
+        android:text="Agent Phone/Email Change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/agentPhoneEmailChngButton" />
+    <Button
+        android:text="Owner Contact Info Change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ownerContactChangeButton" />
+    <Button
+        android:text="Distribution Change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/distributionChangeButton" />
+    <Button
+        android:text="Authorize Simplified Issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/authorizeSimplifiedIssueButton" />
+    <Button
+        android:text="User Password Change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/userPasswordChangeButton" />
+    <Button
+        android:text="Verint Recording Outage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/verintRecordingOutageButton" />
 </LinearLayout>

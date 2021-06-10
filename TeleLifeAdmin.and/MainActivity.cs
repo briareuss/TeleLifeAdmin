@@ -58,8 +58,48 @@ namespace TeleLifeAdmin.and
         }
         private void EmailTlManagerButton_Click(object sender, EventArgs args)
         {
-            var loadOnDemandIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            StartActivity(loadOnDemandIntent);
+            var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            StartActivity(emailTlManagerIntent);
         }
+
+        private void ManagerChatButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+
+        private void AgentPhoneEmailChangeButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+        private void CustomerOwnerContactChangeButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+        private void PolicyNumberDistributionChangeButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+        private void AuthorizeSimpliedIssueButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+        private void UserPasswordChangeButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+        private void VerintRecordingOutageButton_Click(object sender, EventArgs args)
+        {
+            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
+            //StartActivity(emailTlManagerIntent);
+        }
+
+
+
     }
 }
