@@ -2,30 +2,42 @@
 using Android.Views;
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-
+using System.Threading.Tasks;
+using TeleLifeAdmin.and.DataAccess;
 using TeleLifeAdmin.and.ViewHolders;
 using TeleLifeAdmin.shared.Extensions;
+using TeleLifeAdmin.shared.Models;
 
 namespace TeleLifeAdmin.and.Adapters
 {
     public class DashboardAdapter : RecyclerView.Adapter
     {
-        private Dictionary<string,string> _allCalls;
-        public override int ItemCount => _allCalls.Count();
+        private List<DashboardData> _dashboardData;
+        public override int ItemCount => _dashboardData.Count();
 
         public DashboardAdapter()
         {
-            var tempRepo = new TempRepo();
-            _allCalls = tempRepo.RetrieveAllDashboardValues();           
-               
+            
         }
+
+        public async Task RetrieveDashboardValues()
+        {
+            var dashboardValues = new DashboardDataAccess();
+            _dashboardData = await dashboardValues.RetreiveDashboardData();
+
+            Debug.WriteLine($"dashboard count= {_dashboardData.Count}");   
+        
+        }
+
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             if (holder is DashboardViewHolder dashboardViewHolder)
             {
-                dashboardViewHolder.DashboardNameTextView.Text = _allCalls.ElementAt(position).Key.CamelCaseSpace();
-                dashboardViewHolder.DashboardValueTextView.Text = _allCalls.ElementAt(position).Value;
+                dashboardViewHolder.DashboardNameTextView.Text = _dashboardData.ElementAt(position).CountType.CamelCaseSpace();
+                dashboardViewHolder.DashboardValueTextView.Text = _dashboardData.ElementAt(position).Count.ToString();
+
             }
         }
 

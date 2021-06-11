@@ -12,7 +12,7 @@ namespace TeleLifeAdmin.and
         private RecyclerView.LayoutManager _dashboardLayoutManager;
         private DashboardAdapter _dashboardAdapter;
         
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -22,6 +22,9 @@ namespace TeleLifeAdmin.and
             _dashboardLayoutManager = new LinearLayoutManager(this);
             _dashboardRecylerView.SetLayoutManager(_dashboardLayoutManager);
             _dashboardAdapter = new DashboardAdapter();
+
+            await _dashboardAdapter.RetrieveDashboardValues();
+
             _dashboardRecylerView.SetAdapter(_dashboardAdapter);
 
         }
