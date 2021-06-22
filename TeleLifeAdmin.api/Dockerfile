@@ -10,7 +10,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
-COPY ["TeleLifeAdmin.api.csproj", "TeleLifeAdmin.api/"]
+COPY ["TeleLifeAdmin.api/TeleLifeAdmin.api.csproj", "TeleLifeAdmin.api/"]
+COPY ["TeleLifeAdmin.shared/TeleLifeAdmin.shared.csproj", "TeleLifeAdmin.shared/"]
 RUN dotnet restore "TeleLifeAdmin.api/TeleLifeAdmin.api.csproj"
 COPY . .
 WORKDIR "/src/TeleLifeAdmin.api"

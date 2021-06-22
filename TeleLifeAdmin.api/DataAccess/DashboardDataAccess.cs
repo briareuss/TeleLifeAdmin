@@ -37,6 +37,7 @@ namespace TeleLifeAdmin.api.DataAccess
             var reContacts = rnd.Next(1, 37);
             var emailTextsScheduledToday = rnd.Next(2, 1500);
             var rescheduledEmailText = rnd.Next(1, 37);
+            var availableReps = rnd.Next(0, 20);
 
 
             var allCallValues = new List<DashboardData>
@@ -57,8 +58,8 @@ namespace TeleLifeAdmin.api.DataAccess
                 new DashboardData{CountType="ScheduledCallsDelivered",Count =scheduledCallDelivered },
                 new DashboardData{CountType="Rescheduled email/text",Count =rescheduledEmailText },
                 new DashboardData{CountType="Re-Contacts",Count =reContacts },
-                new DashboardData{CountType="AvailableResp",Count =emailTextsScheduledToday },
-                new DashboardData{CountType="CurrentPacingValue",Count =emailTextsScheduledToday }
+                new DashboardData{CountType="AvailableRep",Count =availableReps },
+                new DashboardData{CountType="Email/Text Scheduled Today",Count =emailTextsScheduledToday },
 
 
             };
