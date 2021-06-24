@@ -49,18 +49,22 @@ namespace TeleLifeAdmin.api.DataAccess
                 new DashboardData{CountType="TotalAppComplete",Count =ttlAppComplete },
                 new DashboardData{CountType="TotalCallsMissedYesterday",Count =callMissedYesterday },
                 new DashboardData{CountType="TotalCallsTomorrow",Count =ttlCallForTomorrow },
-                new DashboardData{CountType="CurrentPacingValue",Count =currentPacingValue },
+
                 new DashboardData{CountType="PomCallsToday",Count =pomCallsToday },
                 new DashboardData{CountType="PomCallsPending",Count =pomCallsPending },
                 new DashboardData{CountType="PomInitials",Count =pomInitials },
                 new DashboardData{CountType="PomCallsDelivered",Count =pomCallDelivered },
-                new DashboardData{CountType="ScheduledCallsToday",Count =scheduledCallsToday },
-                new DashboardData{CountType="ScheduledCallsDelivered",Count =scheduledCallDelivered },
-                new DashboardData{CountType="Rescheduled email/text",Count =rescheduledEmailText },
-                new DashboardData{CountType="Re-Contacts",Count =reContacts },
-                new DashboardData{CountType="AvailableRep",Count =availableReps },
-                new DashboardData{CountType="Email/Text Scheduled Today",Count =emailTextsScheduledToday },
 
+                new DashboardData{CountType="ScheduledCallsToday",Count =scheduledCallsToday },
+               // new DashboardData{CountType="ScheduledCallsDelivered",Count =scheduledCallDelivered },
+
+                new DashboardData{CountType="CurrentAvailableRep",Count =availableReps },
+                new DashboardData{CountType="CurrentPacingValue",Count =currentPacingValue },
+
+                new DashboardData{CountType="Email/Text Scheduled Today",Count =emailTextsScheduledToday },
+                new DashboardData{CountType="Email/Text Rescheduled",Count =rescheduledEmailText },
+
+                new DashboardData{CountType="Re-Contacts",Count =reContacts },
 
             };
             return allCallValues;

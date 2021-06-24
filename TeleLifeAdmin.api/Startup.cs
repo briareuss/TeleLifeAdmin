@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TeleLifeAdmin.api.DataAccess;
+using TeleLifeAdmin.api.Managers;
 
 namespace TeleLifeAdmin.api
 {
@@ -29,6 +30,7 @@ namespace TeleLifeAdmin.api
             services.AddControllers();
  
             services.AddTransient<IDashboardDataAccess, DashboardDataAccess>();
+            services.AddTransient<IDashboardManager, DashboardManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using TeleLifeAdmin.api.DataAccess;
+using TeleLifeAdmin.api.Managers;
 
 namespace TeleLifeAdmin.api.Controllers
 {
@@ -8,11 +8,11 @@ namespace TeleLifeAdmin.api.Controllers
     [Route("api/Dashboard")]
     public class DashboardController : ControllerBase
     {
-        private IDashboardDataAccess _dashboardDataAccess;
+        private IDashboardManager _dashboardManager;
 
-        public DashboardController(IDashboardDataAccess dashboardDataAccess)
+        public DashboardController(IDashboardManager dashboardManager)
         {
-            _dashboardDataAccess = dashboardDataAccess;
+            _dashboardManager = dashboardManager;
         }
 
         [HttpGet]
@@ -21,7 +21,7 @@ namespace TeleLifeAdmin.api.Controllers
         {
             try
             {
-                var dashboardValues = _dashboardDataAccess.RetrieveDashboardData();
+                var dashboardValues = _dashboardManager.RetrieveDashboardValues();
 
                 if (dashboardValues == null)
                 {
@@ -36,25 +36,25 @@ namespace TeleLifeAdmin.api.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("CallResolution/Values")]
-        public IActionResult GetCallResolutions()
-        {
-            try
-            {
-                var completionCodes = _dashboardDataAccess.RetrieveCompletionCodes(0);
+        //[HttpGet]
+        //[Route("CallResolution/Values")]
+        //public IActionResult GetCallResolutions()
+        //{
+        //    try
+        //    {
+        //        var completionCodes = _dashboardDataAccess.RetrieveCompletionCodes(0);
 
-                if (completionCodes == null)
-                {
-                    return NotFound();
-                }
-                return Ok(completionCodes);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(500);
+        //        if (completionCodes == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        return Ok(completionCodes);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return StatusCode(500);
 
-            }
-        }
+        //    }
+        //}
     }
 }
