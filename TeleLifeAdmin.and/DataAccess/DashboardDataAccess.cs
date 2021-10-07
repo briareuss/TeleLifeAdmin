@@ -22,16 +22,13 @@ namespace TeleLifeAdmin.and.DataAccess
         public async Task<List<DashboardData>> RetreiveDashboardData()
         {
             try
-            {
-                var baseUrl = "http://192.168.1.17:8080/";
-
-                var client = new HttpClient { BaseAddress = new Uri(baseUrl) };
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept
+            {   
+                _client.DefaultRequestHeaders.Accept.Clear();
+                _client.DefaultRequestHeaders.Accept
                     .Add(new MediaTypeWithQualityHeaderValue("applicaton/json"));
 
                 var urlGetRequest = "api/Dashboard/Values";
-                var response = await client.GetAsync(urlGetRequest);
+                var response = await _client.GetAsync(urlGetRequest);
                 await response.Content.ReadAsStreamAsync();
 
                 if (response.IsSuccessStatusCode)
