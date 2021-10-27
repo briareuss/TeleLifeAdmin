@@ -8,6 +8,7 @@
     android:paddingRight="20dp"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
+    android:background="@color/protectiveBackground"
     android:id="@+id/loadOnDemandLinearLayout">
     <TextView
         android:text="Non Scheduled Pacing"
