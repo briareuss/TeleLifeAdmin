@@ -11,15 +11,13 @@ using System.Text;
 
 namespace TeleLifeAdmin.and
 {
-    [Activity(Label = "Email TlManager")]
-    public class EmailTlManagerActivity : Activity
+    [Activity(Label = "Under Construction")]
+    public class UnderConstructionActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.EmailTlManager);
-
-            // Create your application here
+            SetContentView(Resource.Layout.UnderConstruction);
         }
     }
 }

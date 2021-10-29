@@ -5,7 +5,7 @@ using TeleLifeAdmin.and.Adapters;
 
 namespace TeleLifeAdmin.and
 {
-    [Activity(Label = "DashboardActivity" )]
+    [Activity(Label = "Dashboard" )]
     public class DashboardActivity : Activity
     {
         private RecyclerView _dashboardRecylerView;

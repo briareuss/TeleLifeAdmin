@@ -14,6 +14,13 @@ namespace TeleLifeAdmin.and
         private Button _dashboardButton;
         private Button _loadOnDemandButton;
         private Button _emailTlManagerButton;
+        private Button _managerChatButton;
+        private Button _agentEmailPhoneChangeButton;
+        private Button _ownerContactChangeButton;
+        private Button _distributionChangeButton;
+        private Button _authorizeSimplifiedIssueButton;
+        private Button _userPasswordChangeButton;
+        private Button _verintOutageButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,6 +43,14 @@ namespace TeleLifeAdmin.and
             _dashboardButton.Click += DashboardButton_Click;
             _loadOnDemandButton.Click += LoadOnDemandButton_Click;
             _emailTlManagerButton.Click += EmailTlManagerButton_Click;
+            _managerChatButton.Click += ManagerChatButton_Click;
+            _agentEmailPhoneChangeButton.Click += AgentPhoneEmailChangeButton_Click;
+            _ownerContactChangeButton.Click += OwnerContactChangeButton_Click;
+            _distributionChangeButton.Click += DistributionChangeButton_Click;
+            _authorizeSimplifiedIssueButton.Click += AuthorizeSimpliedIssueButton_Click;
+            _userPasswordChangeButton.Click += UserPasswordChangeButton_Click;
+            _verintOutageButton.Click += VerintRecordingOutageButton_Click;
+
         }
 
         private void FindViews()
@@ -43,6 +58,13 @@ namespace TeleLifeAdmin.and
             _dashboardButton = FindViewById<Button>(Resource.Id.dashboardButton);
             _loadOnDemandButton = FindViewById<Button>(Resource.Id.loadOnDemandButton);
             _emailTlManagerButton = FindViewById<Button>(Resource.Id.emailTlManagerButton);
+            _managerChatButton = FindViewById<Button>(Resource.Id.managerChatButton);
+            _agentEmailPhoneChangeButton = FindViewById<Button>(Resource.Id.agentPhoneEmailChngButton);
+            _ownerContactChangeButton = FindViewById<Button>(Resource.Id.ownerContactChangeButton);
+            _distributionChangeButton = FindViewById<Button>(Resource.Id.distributionChangeButton);
+            _authorizeSimplifiedIssueButton = FindViewById<Button>(Resource.Id.authorizeSimplifiedIssueButton);
+            _userPasswordChangeButton = FindViewById<Button>(Resource.Id.userPasswordChangeButton);
+            _verintOutageButton = FindViewById<Button>(Resource.Id.verintRecordingOutageButton);
         }
         
         private void DashboardButton_Click(object sender, EventArgs args)
@@ -64,42 +86,39 @@ namespace TeleLifeAdmin.and
 
         private void ManagerChatButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var managerChatIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(managerChatIntent);
         }
 
         private void AgentPhoneEmailChangeButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var agentPhoneEmailChangeIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(agentPhoneEmailChangeIntent);
         }
-        private void CustomerOwnerContactChangeButton_Click(object sender, EventArgs args)
+        private void OwnerContactChangeButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var ownerContactChabgeIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(ownerContactChabgeIntent);
         }
-        private void PolicyNumberDistributionChangeButton_Click(object sender, EventArgs args)
+        private void DistributionChangeButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var distributionChangeIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(distributionChangeIntent);
         }
         private void AuthorizeSimpliedIssueButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var authorizeSimpliedIssueIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(authorizeSimpliedIssueIntent);
         }
         private void UserPasswordChangeButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var userPasswordChangeIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(userPasswordChangeIntent);
         }
         private void VerintRecordingOutageButton_Click(object sender, EventArgs args)
         {
-            //var emailTlManagerIntent = new Intent(this, typeof(EmailTlManagerActivity));
-            //StartActivity(emailTlManagerIntent);
+            var verintOutageIntent = new Intent(this, typeof(UnderConstructionActivity));
+            StartActivity(verintOutageIntent);
         }
-
-
-
     }
 }
