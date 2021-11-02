@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace TeleLifeAdmin.and.DataAccess
 {
@@ -22,7 +23,7 @@ namespace TeleLifeAdmin.and.DataAccess
         public async Task<List<DashboardData>> RetreiveDashboardData()
         {
             try
-            {   
+            {
                 _client.DefaultRequestHeaders.Accept.Clear();
                 _client.DefaultRequestHeaders.Accept
                     .Add(new MediaTypeWithQualityHeaderValue("applicaton/json"));
@@ -43,6 +44,21 @@ namespace TeleLifeAdmin.and.DataAccess
                 Debug.WriteLine($"Error {e.Message}");
             }
             return new List<DashboardData>();
+        }
+
+        public async Task<HttpResponseMessage> ChangePacingValue(OnDemandConfiguration onDemand)
+        {
+            var serializedData = JsonConvert.SerializeObject(onDemand);
+
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue("applicaton/json"));
+
+            var urlGetRequest = "api/OnDemand/Values";
+            var response = await _client.PutAsync(urlGetRequest, new StringContent(serializedData,
+                Encoding.Unicode, "appllication/json"));
+            await response.Content.ReadAsStreamAsync();
+            return response;
         }
     }
 }
