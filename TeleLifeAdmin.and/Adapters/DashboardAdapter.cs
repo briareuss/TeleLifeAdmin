@@ -1,6 +1,6 @@
 ﻿using Android.Support.V7.Widget;
 using Android.Views;
-
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,8 +24,15 @@ namespace TeleLifeAdmin.and.Adapters
 
         public async Task RetrieveDashboardValues()
         {
-            var dashboardValues = new DashboardDataAccess();
-            _dashboardData = await dashboardValues.RetreiveDashboardData();
+            var dashboardValues = new TeleLifeAdminDataAccess();
+            try
+            {
+                _dashboardData = await dashboardValues.RetreiveDashboardData();
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine($"Exeption: {e.StackTrace}");
+            }
 
             Debug.WriteLine($"dashboard count= {_dashboardData.Count}");   
         

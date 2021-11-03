@@ -1,11 +1,15 @@
 {
-  "$schema\": \"http": null, //json.schemastore.org/launchsettings.json",
+  "$schema\": \"http": null,
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/TeleLifeAdmin.api",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:47319",
-      "sslPort": 44371
+      "sslPort": 0
     }
   },
   "profiles": {
@@ -18,7 +22,8 @@
       }
     },
     "TeleLifeAdmin.api": {
-      "commandName": "Project",
+      "commandName": "IIS",
+      "workingDirectory": "C:\\dev\\TeleLifeAdmin\\TeleLifeAdmin.api",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
@@ -32,6 +37,10 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
       "publishAllPorts": true,
       "useSSL": true
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
     }
   }
 }

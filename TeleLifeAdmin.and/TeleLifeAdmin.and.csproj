@@ -72,7 +72,7 @@
   <ItemGroup>
     <Compile Include="Adapters\DashboardAdapter.cs" />
     <Compile Include="DashboardActivity.cs" />
-    <Compile Include="DataAccess\DashboardDataAccess.cs" />
+    <Compile Include="DataAccess\TeleLifeAdminDataAccess.cs" />
     <Compile Include="DataAccess\Singleton\TelelifeAdminApiClient.cs" />
     <Compile Include="EmailTlManagerActivity.cs" />
     <Compile Include="LoadOnDemandActivity.cs" />

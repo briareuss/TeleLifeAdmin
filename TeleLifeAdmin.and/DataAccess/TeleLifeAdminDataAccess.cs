@@ -11,11 +11,11 @@ using System.Text;
 
 namespace TeleLifeAdmin.and.DataAccess
 {
-    public class DashboardDataAccess
+    public class TeleLifeAdminDataAccess
     {
         private readonly HttpClient _client;
 
-        public DashboardDataAccess()
+        public TeleLifeAdminDataAccess()
         {
             _client = TelelifeAdminApiClient.CreateTelelifeAdminApiClientInstance.RetieveHttpClient();
         }
@@ -52,11 +52,26 @@ namespace TeleLifeAdmin.and.DataAccess
 
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Accept
-                .Add(new MediaTypeWithQualityHeaderValue("applicaton/json"));
+                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var urlGetRequest = "api/OnDemand/Values";
+            var urlGetRequest = "api/OnDemand/Values/Pacing";
             var response = await _client.PutAsync(urlGetRequest, new StringContent(serializedData,
-                Encoding.Unicode, "appllication/json"));
+                Encoding.Unicode, "application/json"));
+            await response.Content.ReadAsStreamAsync();
+            return response;
+        }
+
+        public async Task<HttpResponseMessage> SendAutomatedContacts(int amount)
+        {
+            var serializedData = JsonConvert.SerializeObject(amount);
+
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept
+                .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var urlGetRequest = "api/OnDemand/Values/AutomatedContacts";
+            var response = await _client.PostAsync(urlGetRequest, new StringContent(serializedData,
+                Encoding.Unicode, "application/json"));
             await response.Content.ReadAsStreamAsync();
             return response;
         }
