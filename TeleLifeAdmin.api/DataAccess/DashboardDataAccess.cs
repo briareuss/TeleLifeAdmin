@@ -16,54 +16,61 @@ namespace TeleLifeAdmin.api.DataAccess
         {
             var rnd = new Random();
 
-            var ttlContactsToday = rnd.Next(600, 3000);
-            var ttlCallCurrentlyAvailable = rnd.Next(300, 1100);
-            var ttlCallsDelivered = rnd.Next(50, 575);
-            var initials = rnd.Next(1, 250);
-            var ttlAppComplete = rnd.Next(2, 375);
-            var ttlCallForTomorrow = rnd.Next(1, 37);
-            var callMissedYesterday = rnd.Next(2, 1500);
+            var ttlContactsToday = rnd.Next(600, 3000).ToString();
+            var ttlCallCurrentlyAvailable = rnd.Next(300, 1100).ToString();
+            var ttlCallsDelivered = rnd.Next(50, 575).ToString();
+            var initials = rnd.Next(1, 250).ToString();
+            var ttlAppComplete = rnd.Next(2, 375).ToString();
+            var ttlCallForTomorrow = rnd.Next(1, 37).ToString();
+            var callMissedYesterday = rnd.Next(2, 1500).ToString();
 
-            var currentPacingValue = rnd.Next(0, 2);
-            var pomCallsToday = rnd.Next(300, 1100);
-            var pomCallsPending = rnd.Next(50, 275);
-            var pomInitials = rnd.Next(1, 250);
-            var pomCallDelivered = rnd.Next(2, 375);
+            var currentPacingValue = rnd.Next(0, 2).ToString();
+            var pomCallsToday = rnd.Next(300, 1100).ToString();
+            var pomCallsPending = rnd.Next(50, 275).ToString();
+            var pomInitials = rnd.Next(1, 250).ToString();
+            var pomCallDelivered = rnd.Next(2, 375).ToString();
 
 
-            var scheduledCallsToday = rnd.Next(1, 77);
-            var scheduledCallDelivered = rnd.Next(2, 1500);
+            var scheduledCallsToday = rnd.Next(1, 77).ToString();
+            var scheduledCallDelivered = rnd.Next(2, 1500).ToString();
 
-            var reContacts = rnd.Next(1, 37);
-            var emailTextsScheduledToday = rnd.Next(2, 1500);
-            var rescheduledEmailText = rnd.Next(1, 37);
-            var availableReps = rnd.Next(0, 20);
+            var reContacts = rnd.Next(1, 37).ToString();
+            var emailTextsScheduledToday = rnd.Next(2, 1500).ToString();
+            var rescheduledEmailText = rnd.Next(1, 37).ToString();
+            var availableReps = rnd.Next(0, 20).ToString();
 
 
             var allCallValues = new List<DashboardData>
             {
-                new DashboardData{CountType="TotalCallsToday",Count =ttlContactsToday },
-                new DashboardData{CountType="TotalCallsCurrentlyAvailable",Count =ttlCallCurrentlyAvailable },
-                new DashboardData{CountType="TotalInitials",Count =initials },
+                new DashboardData{CountType="PACING", Count=""},
+                new DashboardData{CountType="CurrentAvailableRep",Count =availableReps },
+                new DashboardData{CountType="CurrentPacingValue",Count =currentPacingValue },
+
+                //new DashboardData{CountType="TotalCallsToday",Count =ttlContactsToday },
+                //new DashboardData{CountType="TotalCallsCurrentlyAvailable",Count =ttlCallCurrentlyAvailable },
+                //new DashboardData{CountType="TotalInitials",Count =initials },
+                new DashboardData{CountType="", Count=""},
+                new DashboardData { CountType="ALL CALLS", Count=""},
                 new DashboardData{CountType="TotalCallsDelivered",Count =ttlCallsDelivered },
                 new DashboardData{CountType="TotalAppComplete",Count =ttlAppComplete },
                 new DashboardData{CountType="TotalCallsMissedYesterday",Count =callMissedYesterday },
                 new DashboardData{CountType="TotalCallsTomorrow",Count =ttlCallForTomorrow },
 
+                new DashboardData{CountType="", Count=""},
+                new DashboardData { CountType="POM CALLS", Count=""},
                 new DashboardData{CountType="PomCallsToday",Count =pomCallsToday },
                 new DashboardData{CountType="PomCallsPending",Count =pomCallsPending },
                 new DashboardData{CountType="PomInitials",Count =pomInitials },
                 new DashboardData{CountType="PomCallsDelivered",Count =pomCallDelivered },
-
-                new DashboardData{CountType="ScheduledCallsToday",Count =scheduledCallsToday },
-               // new DashboardData{CountType="ScheduledCallsDelivered",Count =scheduledCallDelivered },
-
-                new DashboardData{CountType="CurrentAvailableRep",Count =availableReps },
-                new DashboardData{CountType="CurrentPacingValue",Count =currentPacingValue },
-
+                
+                new DashboardData{CountType="", Count=""},
+                new DashboardData { CountType="EMAILS", Count=""},
                 new DashboardData{CountType="Email/Text Scheduled Today",Count =emailTextsScheduledToday },
                 new DashboardData{CountType="Email/Text Rescheduled",Count =rescheduledEmailText },
 
+                new DashboardData{CountType="", Count=""},
+                new DashboardData { CountType="MISC. DATA", Count=""},
+                new DashboardData{CountType="ScheduledCallsToday",Count =scheduledCallsToday },
                 new DashboardData{CountType="Re-Contacts",Count =reContacts },
 
             };
