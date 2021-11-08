@@ -35,26 +35,11 @@ namespace TeleLifeAdmin.api.Controllers
 
             }
         }
-
-        //[HttpGet]
-        //[Route("CallResolution/Values")]
-        //public IActionResult GetCallResolutions()
-        //{
-        //    try
-        //    {
-        //        var completionCodes = _dashboardDataAccess.RetrieveCompletionCodes(0);
-
-        //        if (completionCodes == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        return Ok(completionCodes);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return StatusCode(500);
-
-        //    }
-        //}
+        [HttpGet]
+        [Route("Test")]
+        public IActionResult GetTest()
+        {
+            return Ok("Hello From TeleLife Admin API");
+        }
     }
 }
