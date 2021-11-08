@@ -23,9 +23,7 @@ namespace TeleLifeAdmin.and
             SetContentView(Resource.Layout.Dashboard);
 
             _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);
-            //_refresh.Refreshing = true;
-
-
+            
             _dashboardRecylerView = FindViewById<RecyclerView>(Resource.Id.dashboardRecyclerView);
 
             _dashboardLayoutManager = new LinearLayoutManager(this);
@@ -35,7 +33,6 @@ namespace TeleLifeAdmin.and
             await _dashboardAdapter.RetrieveDashboardValues();
 
             _dashboardRecylerView.SetAdapter(_dashboardAdapter);
-
            
             _refresh.Refresh += async delegate (object sender, System.EventArgs e)
             {
@@ -47,10 +44,5 @@ namespace TeleLifeAdmin.and
             };
 
         }
-
-        //async void SwipeDashboard_Refresh(object sender, EventArgs e)
-        //{
-        //    (sender as SwipeRefreshLayout).Refreshing = false;
-        //}
     }
 }

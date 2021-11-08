@@ -57,7 +57,7 @@ namespace TeleLifeAdmin.and.DataAccess
             var urlGetRequest = "api/OnDemand/Values/Pacing";
             var response = await _client.PutAsync(urlGetRequest, new StringContent(serializedData,
                 Encoding.Unicode, "application/json"));
-            await response.Content.ReadAsStreamAsync();
+            var body= await response.Content.ReadAsStringAsync();
             return response;
         }
 

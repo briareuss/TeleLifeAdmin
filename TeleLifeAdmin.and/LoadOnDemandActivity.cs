@@ -48,11 +48,9 @@ namespace TeleLifeAdmin.and
                 Name = "NonScheduledCallPacing",
                 Value = "0"
 
-            };
-            
+            };            
 
             var changePacing = await onDemandPacing.ChangePacingValue(configuration);
-
             
             Console.WriteLine($"pacing amount {pacingAmount}. Result {changePacing}");
             Toast.MakeText(Application.Context, $"Pacing changed to {pacingAmount}. Result {changePacing}", ToastLength.Long).Show();
@@ -62,7 +60,6 @@ namespace TeleLifeAdmin.and
         {
             var loadAmount = int.Parse(_loadAutomatedContactsTextView.Text);
             var automatedContactsAmount = await new TeleLifeAdminDataAccess().SendAutomatedContacts(loadAmount);
-
 
             Console.WriteLine($"Contacts amount {loadAmount}. Result {automatedContactsAmount}");
             Toast.MakeText(Application.Context, $"Contacts loaded= {loadAmount}. Result {automatedContactsAmount}", ToastLength.Long).Show();

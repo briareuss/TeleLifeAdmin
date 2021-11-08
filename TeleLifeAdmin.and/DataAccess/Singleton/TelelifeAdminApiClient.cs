@@ -38,8 +38,8 @@ namespace TeleLifeAdmin.and.DataAccess.Singleton
         private HttpClient CreateHttpClient()
         {
             //var baseUrl = "http://192.168.1.22:8080/";
-            var baseUrl = "http://192.168.1.24:8080/";
-            //var baseUrl = "http://192.168.1.24:5000/";
+            //var baseUrl = "http://192.168.1.24:8080/";
+            var baseUrl = "http://192.168.1.24:5000/";
 
             var client = new HttpClient { BaseAddress = new Uri(baseUrl) };
             client.DefaultRequestHeaders.Accept.Clear();
