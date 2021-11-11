@@ -22,8 +22,7 @@ namespace TeleLifeAdmin.and
 
             SetContentView(Resource.Layout.Dashboard);
 
-            _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);
-            
+            _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);            
             _dashboardRecylerView = FindViewById<RecyclerView>(Resource.Id.dashboardRecyclerView);
 
             _dashboardLayoutManager = new LinearLayoutManager(this);
