@@ -46,7 +46,7 @@ namespace TeleLifeAdmin.and.DataAccess
             return new List<DashboardData>();
         }
 
-        public async Task<HttpResponseMessage> ChangePacingValue(OnDemandConfiguration onDemand)
+        public async Task<string> ChangePacingValue(OnDemandConfiguration onDemand)
         {
             var serializedData = JsonConvert.SerializeObject(onDemand);
 
@@ -54,14 +54,14 @@ namespace TeleLifeAdmin.and.DataAccess
             _client.DefaultRequestHeaders.Accept
                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var urlGetRequest = "api/OnDemand/Values/Pacing";
-            var response = await _client.PutAsync(urlGetRequest, new StringContent(serializedData,
+            var urlRequest = "api/OnDemand/Values/Pacing";
+            var response = await _client.PutAsync(urlRequest, new StringContent(serializedData,
                 Encoding.Unicode, "application/json"));
             var body= await response.Content.ReadAsStringAsync();
-            return response;
+            return body;
         }
 
-        public async Task<HttpResponseMessage> SendAutomatedContacts(int amount)
+        public async Task<string> SendAutomatedContacts(string amount)
         {
             var serializedData = JsonConvert.SerializeObject(amount);
 
@@ -70,10 +70,11 @@ namespace TeleLifeAdmin.and.DataAccess
                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var urlGetRequest = "api/OnDemand/Values/AutomatedContacts";
-            var response = await _client.PostAsync(urlGetRequest, new StringContent(serializedData,
+            var response = await _client.PostAsync(urlGetRequest, new StringContent(amount,
                 Encoding.Unicode, "application/json"));
-            await response.Content.ReadAsStreamAsync();
-            return response;
+            var responseBody =await response.Content.ReadAsStringAsync();
+                        
+            return responseBody;
         }
     }
 }

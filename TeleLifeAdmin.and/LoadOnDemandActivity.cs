@@ -41,28 +41,32 @@ namespace TeleLifeAdmin.and
 
         private async void NonScheduledPacing_Click(object sender, EventArgs args)
         {
-            var pacingAmount = int.Parse(_nonScheduledPacingTextView.Text);
+            var pacingAmount = _nonScheduledPacingTextView.Text;
 
             var onDemandPacing = new TeleLifeAdminDataAccess();
             var configuration = new OnDemandConfiguration { 
                 Name = "NonScheduledCallPacing",
-                Value = "0"
-
+                Value = pacingAmount
             };            
 
             var changePacing = await onDemandPacing.ChangePacingValue(configuration);
             
             Console.WriteLine($"pacing amount {pacingAmount}. Result {changePacing}");
             Toast.MakeText(Application.Context, $"Pacing changed to {pacingAmount}. Result {changePacing}", ToastLength.Long).Show();
+
+            _nonScheduledPacingTextView.Text = "0";
         }
 
         private async void LoadAutomatedContacts_Click(object sender, EventArgs args)
         {
-            var loadAmount = int.Parse(_loadAutomatedContactsTextView.Text);
+            var loadAmount = _loadAutomatedContactsTextView.Text;
             var automatedContactsAmount = await new TeleLifeAdminDataAccess().SendAutomatedContacts(loadAmount);
 
             Console.WriteLine($"Contacts amount {loadAmount}. Result {automatedContactsAmount}");
             Toast.MakeText(Application.Context, $"Contacts loaded= {loadAmount}. Result {automatedContactsAmount}", ToastLength.Long).Show();
+
+            _loadAutomatedContactsTextView.Text = "0";
+
         }
     }
 }

@@ -1,25 +1,45 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Xamarin.Essentials;
 
 namespace TeleLifeAdmin.and
 {
     [Activity(Label = "Email TlManager")]
     public class EmailTlManagerActivity : Activity
     {
+        private Button _emailButton;
+        private EditText _emailText;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EmailTlManager);
 
-            // Create your application here
+            FindViews();
+            LinkEventHandlers();
+        }
+
+        private void LinkEventHandlers()
+        {
+            _emailButton.Click += _emailButtonClick;
+        }       
+
+        private void FindViews()
+        {
+            _emailButton = FindViewById<Button>(Resource.Id.tlManagerEmailButton);
+            _emailText = FindViewById<EditText>(Resource.Id.tlManagerEmailEditText);
+        }
+        private async void _emailButtonClick(object sender, EventArgs e)
+        {
+            var emailMessage = new EmailMessage
+            {
+                Subject = "Message from TL Admin Phone app",
+                Body = _emailText.Text,
+                To = new List<string> { "tl_manager@protective.com" }
+            };
+            await Email.ComposeAsync(emailMessage);
         }
     }
 }
