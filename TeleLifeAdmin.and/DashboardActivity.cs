@@ -2,6 +2,8 @@
 using Android.OS;
 using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
+using Android.Views;
+using Android.Widget;
 using System;
 using TeleLifeAdmin.and.Adapters;
 
@@ -15,6 +17,7 @@ namespace TeleLifeAdmin.and
         private DashboardAdapter _dashboardAdapter;
 
         private SwipeRefreshLayout _refresh;
+        private ProgressBar _progressBar;
         
         protected async override void OnCreate(Bundle savedInstanceState)
         {
@@ -24,6 +27,9 @@ namespace TeleLifeAdmin.and
 
             _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);            
             _dashboardRecylerView = FindViewById<RecyclerView>(Resource.Id.dashboardRecyclerView);
+
+            _progressBar = FindViewById<ProgressBar>(Resource.Id.dashboardProgressBar);
+            _progressBar.Visibility = ViewStates.Visible;
 
             _dashboardLayoutManager = new LinearLayoutManager(this);
             _dashboardRecylerView.SetLayoutManager(_dashboardLayoutManager);
