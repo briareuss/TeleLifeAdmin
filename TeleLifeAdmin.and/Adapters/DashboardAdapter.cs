@@ -31,12 +31,12 @@ namespace TeleLifeAdmin.and.Adapters
             }
             catch(Exception e)
             {                
-                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found" , Count="0"} };
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found" , Count=""} };
             }
 
             if (_dashboardData.Count == 0)
             {
-                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found", Count="0" } };
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found", Count="" } };
             }
         }
 
