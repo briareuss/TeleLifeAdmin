@@ -7,7 +7,7 @@ using Xamarin.Essentials;
 
 namespace TeleLifeAdmin.and
 {
-    [Activity(Label = "Email TlManager")]
+    [Activity(Label = "Email TL Manager")]
     public class EmailTlManagerActivity : Activity
     {
         private Button _emailButton;

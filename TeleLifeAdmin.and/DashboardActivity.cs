@@ -22,13 +22,10 @@ namespace TeleLifeAdmin.and
         protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.Dashboard);
 
-            _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);            
-            _dashboardRecylerView = FindViewById<RecyclerView>(Resource.Id.dashboardRecyclerView);
-
-            _progressBar = FindViewById<ProgressBar>(Resource.Id.dashboardProgressBar);
+            FindViews();
+           
             _progressBar.Visibility = ViewStates.Visible;
 
             _dashboardLayoutManager = new LinearLayoutManager(this);
@@ -36,6 +33,8 @@ namespace TeleLifeAdmin.and
             _dashboardAdapter = new DashboardAdapter();
 
             await _dashboardAdapter.RetrieveDashboardValues();
+
+            _progressBar.Visibility = ViewStates.Invisible;
 
             _dashboardRecylerView.SetAdapter(_dashboardAdapter);
            
@@ -47,7 +46,13 @@ namespace TeleLifeAdmin.and
 
                 _refresh.Refreshing = false;
             };
+        }
 
+        private void FindViews()
+        {
+            _refresh = FindViewById<SwipeRefreshLayout>(Resource.Id.dashboardRefreshLayout);
+            _dashboardRecylerView = FindViewById<RecyclerView>(Resource.Id.dashboardRecyclerView);
+            _progressBar = FindViewById<ProgressBar>(Resource.Id.dashboardProgressBar);
         }
     }
 }

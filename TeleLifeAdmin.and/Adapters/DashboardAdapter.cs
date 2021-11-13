@@ -30,12 +30,14 @@ namespace TeleLifeAdmin.and.Adapters
                 _dashboardData = await dashboardValues.RetreiveDashboardData();
             }
             catch(Exception e)
-            {
-                Debug.WriteLine($"Exeption: {e.StackTrace}");
+            {                
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found" , Count="0"} };
             }
 
-            Debug.WriteLine($"dashboard count= {_dashboardData.Count}");   
-        
+            if (_dashboardData.Count == 0)
+            {
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found", Count="0" } };
+            }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -44,7 +46,6 @@ namespace TeleLifeAdmin.and.Adapters
             {
                 dashboardViewHolder.DashboardNameTextView.Text = _dashboardData.ElementAt(position).CountType.CamelCaseSpace();
                 dashboardViewHolder.DashboardValueTextView.Text = _dashboardData.ElementAt(position).Count.ToString();
-
             }
         }
 
