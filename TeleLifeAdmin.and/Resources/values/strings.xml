@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TeleLifeAdmin.and</string>
+    <string name="app_name">TeleLifeAdmin</string>
     <string name="action_settings">Settings</string>
 
   <string-array name="one_to_ten_array">
