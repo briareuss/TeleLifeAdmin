@@ -8,7 +8,7 @@ using System;
 
 namespace TeleLifeAdmin.and
 {
-    [Activity(Label = "TeleLife Admin", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "TeleLife Admin", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity
     {
         private Button _dashboardButton;
