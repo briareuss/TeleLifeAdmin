@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent"    
+    android:orientation="vertical"
+    android:background="@color/protectiveBackground">
     <Button
         android:text="Dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"        
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/dashboardButton" />
     <Button
@@ -17,6 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/loadOnDemandButton" />
     <Button
@@ -24,6 +30,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/emailTlManagerButton" />
     <Button
@@ -31,6 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/managerChatButton" />
     <Button
@@ -38,6 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/agentPhoneEmailChngButton" />
     <Button
@@ -45,6 +57,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/ownerContactChangeButton" />
     <Button
@@ -52,6 +66,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/distributionChangeButton" />
     <Button
@@ -59,6 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/authorizeSimplifiedIssueButton" />
     <Button
@@ -66,6 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/userPasswordChangeButton" />
     <Button
@@ -73,6 +93,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
+        android:layout_marginBottom="5dp"               
+        android:background="@color/protectiveLightPurple"
         android:layout_gravity="center_horizontal"
         android:id="@+id/verintRecordingOutageButton" />
 </LinearLayout>

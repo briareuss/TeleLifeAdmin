@@ -1,6 +1,6 @@
 ﻿using Android.Support.V7.Widget;
 using Android.Views;
-
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,11 +24,20 @@ namespace TeleLifeAdmin.and.Adapters
 
         public async Task RetrieveDashboardValues()
         {
-            var dashboardValues = new DashboardDataAccess();
-            _dashboardData = await dashboardValues.RetreiveDashboardData();
+            var dashboardValues = new TeleLifeAdminDataAccess();
+            try
+            {
+                _dashboardData = await dashboardValues.RetreiveDashboardData();
+            }
+            catch(Exception e)
+            {                
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found" , Count=""} };
+            }
 
-            Debug.WriteLine($"dashboard count= {_dashboardData.Count}");   
-        
+            if (_dashboardData.Count == 0)
+            {
+                _dashboardData = new List<DashboardData> { new DashboardData { CountType = "Dashboard data not found", Count="" } };
+            }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -37,7 +46,6 @@ namespace TeleLifeAdmin.and.Adapters
             {
                 dashboardViewHolder.DashboardNameTextView.Text = _dashboardData.ElementAt(position).CountType.CamelCaseSpace();
                 dashboardViewHolder.DashboardValueTextView.Text = _dashboardData.ElementAt(position).Count.ToString();
-
             }
         }
 

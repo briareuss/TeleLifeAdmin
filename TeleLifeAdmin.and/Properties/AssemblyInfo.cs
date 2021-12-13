@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Android.App;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -9,10 +10,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TeleLifeAdmin.and")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 [assembly: ComVisible(false)]
+//[assembly: Application(UsesCleartextTraffic = true)]
+
 
 // Version information for an assembly consists of the following four values:
 //
@@ -20,5 +24,11 @@ using System.Runtime.InteropServices;
 //      Minor Version 
 //      Build Number
 //      Revision
+
+#if DEBUG
+[assembly: Application(Debuggable = true, UsesCleartextTraffic = true)]
+#else
+[assembly: Application(Debuggable=false, UsesCleartextTraffic = true)]
+#endif
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

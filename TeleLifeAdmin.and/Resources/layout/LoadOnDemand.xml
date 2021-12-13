@@ -8,6 +8,7 @@
     android:paddingRight="20dp"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
+    android:background="@color/protectiveBackground"
     android:id="@+id/loadOnDemandLinearLayout">
     <TextView
         android:text="Non Scheduled Pacing"
@@ -15,12 +16,13 @@
         android:layout_height="wrap_content"
         android:height="40dp"
         android:textSize="25dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/nonScheduledPacingTextView" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
+        android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nonScheduledPacingLinearLayout">
@@ -46,7 +48,7 @@
         android:layout_height="wrap_content"
         android:height="40dp"
         android:textSize="25dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/loadAutomatedContactsTextView" />
 
     <LinearLayout
